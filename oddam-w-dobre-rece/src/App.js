@@ -1,9 +1,11 @@
-
+import Home from './components/Home'
 
 function App() {
-  return (
-   <>hujj</>
-  );
+	return (
+		<>
+			<Home />
+		</>
+	)
 }
 
-export default App;
+export default App

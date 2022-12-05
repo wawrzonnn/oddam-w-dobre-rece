@@ -1,8 +1,11 @@
 @import './fonts';
 @import './colors';
+@import './global';
+@import '../../components/HomeHeader/homeheader';
+@import '../../components/HomeThreeColumns/threecolumns';
 
 
 body {
-font-size: 100px;
+font-size: 10px;
 font-family: $font-base;
 }

@@ -1,0 +1,9 @@
+.threecolumns__box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    &--small {
+        width: 23.3%;
+    }
+}
