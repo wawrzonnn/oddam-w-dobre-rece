@@ -9,11 +9,18 @@
 	&--login {
 		display: flex;
 		justify-content: flex-end;
-		color: red;
-		background-color: red;
+		font: 1rem Open Sans;
+		color: #737373;
+		margin: 1rem 8rem;
 	}
 }
 
+.header__login--buttons {
+	padding: 0.5rem;
+	&:hover {
+		border: 0.75px solid #fad648;
+	}
+}
 .header__image {
 	width: 50%;
 }
@@ -22,9 +29,15 @@
 	display: flex;
 	justify-content: flex-end;
 	list-style: none;
-	font-size: 1rem;
+	font-size: 1.3rem;
+	margin-right: 7rem;
 	&--item {
-		margin: 1rem;
+		margin: 0 1rem;
+		color: #3c3c3c;
+		padding: 0.8rem;
+		&:hover {
+			border: 0.75px solid #3c3c3c;
+		}
 	}
 }
 
@@ -33,5 +46,21 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	width: 30%;
+	margin-top: 8rem;
+}
+
+.header__buttons--box {
+	display: flex;
+	margin-top: 3rem;
+}
+
+.header__bottons--item {
+    width: 50%;
+	border: 0.75px solid #3c3c3c;
+	color: #3c3c3c;
+	padding: 1rem 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 1rem;
 }

@@ -1,6 +1,7 @@
 @import './fonts';
 @import './colors';
 @import './global';
+@import './reset';
 @import '../../components/HomeHeader/homeheader';
 @import '../../components/HomeThreeColumns/threecolumns';
 
@@ -8,4 +9,5 @@
 body {
 font-size: 10px;
 font-family: $font-base;
+box-sizing: border-box;
 }
