@@ -17,6 +17,8 @@
 
 .header__login--buttons {
 	padding: 0.5rem;
+	border: 0.75px solid transparent;
+	cursor: pointer;
 	&:hover {
 		border: 0.75px solid #fad648;
 	}
@@ -35,6 +37,8 @@
 		margin: 0 1rem;
 		color: #3c3c3c;
 		padding: 0.8rem;
+		border: 0.75px solid transparent;
+		cursor: pointer;
 		&:hover {
 			border: 0.75px solid #3c3c3c;
 		}
@@ -63,4 +67,5 @@
     font-weight: 300;
     text-align: center;
     margin: 1rem;
+	cursor: pointer;
 }
