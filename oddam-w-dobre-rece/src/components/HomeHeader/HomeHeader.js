@@ -29,11 +29,11 @@ const HomeHeader = () => {
 					</h1>
 					<img src={Decoration} alt='dekoracja' />
 					<div className='header__buttons--box'>
-						<div className='header__bottons--item'>
+						<div className='header__buttons--item'>
 							ODDAJ
 							<br /> RZECZY
 						</div>
-						<div className='header__bottons--item'>ZORGANIZUJ ZBIÓRKĘ</div>
+						<div className='header__buttons--item'>ZORGANIZUJ ZBIÓRKĘ</div>
 					</div>
 				</div>
 			</div>
