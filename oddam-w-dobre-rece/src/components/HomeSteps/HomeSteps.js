@@ -8,7 +8,7 @@ import icon4 from '../../assets/Icon-4.svg'
 const HomeSteps = () => {
 	return (
 		<>
-			<div className='homesteps__box--title'>
+			<div className='homesteps__box--title' id='steps'>
 				<h2 className='global__title'>Wystarczą 4 proste kroki</h2>
 				<img src={Decoration} alt='dekoracja' />
 			</div>

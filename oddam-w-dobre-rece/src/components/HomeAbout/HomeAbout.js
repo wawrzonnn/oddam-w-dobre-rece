@@ -6,7 +6,7 @@ import decoration from '../../assets/Decoration.svg'
 const HomeAbout = () => {
 	return (
 		<>
-			<div className='homeabout__box'>
+			<div className='homeabout__box' id='aboutus'>
 				<div className='homeabout__box--title'>
 					<h2 className='global__title'>O nas</h2>
 					<img src={decoration} alt='dekoracja' />

@@ -43,6 +43,10 @@
 			border: 0.75px solid #3c3c3c;
 		}
 	}
+	&--link {
+		text-decoration: none;
+		color: #3c3c3c;
+	}
 }
 
 .header__banner--box {
@@ -56,6 +60,7 @@
 .header__buttons--box {
 	display: flex;
 	margin-top: 3rem;
+	background-color: white;
 }
 
 .header__buttons--item {
@@ -68,4 +73,5 @@
     text-align: center;
     margin: 1rem;
 	cursor: pointer;
+	background-color: white;
 }
