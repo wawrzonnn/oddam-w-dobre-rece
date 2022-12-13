@@ -1,10 +1,29 @@
 import React from 'react'
 import decoration from '../../assets/Decoration.svg'
+import { useEffect, useState } from 'react'
+const API =
+	'https://askagyntutlweczoibwy.supabase.co/storage/v1/object/sign/oddam-w-dobre-rece/fundations.json?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJvZGRhbS13LWRvYnJlLXJlY2UvZnVuZGF0aW9ucy5qc29uIiwidHJhbnNmb3JtYXRpb25zIjoiIiwiaWF0IjoxNjcwODc0NTczLCJleHAiOjE5ODYyMzQ1NzN9.ZffA75n0akomObLTkPmyqpVqtOyegiDdZw88utbh2jA'
+
+const handleError = err => {
+	console.log('Oops...')
+	console.error(err)
+}
 
 const OurHelp = () => {
+	const [orgs, setOrgs] = useState([])
+
+	useEffect(() => {
+		const getOrganisations = async () => {
+			const response = await fetch(API)
+			const { organisations } = await response.json()
+
+			setOrgs(organisations)
+		}
+		getOrganisations().catch(handleError)
+	}, [])
 	return (
 		<>
-			<div className='homesteps__box--title'  id='ourhelp'>
+			<div className='homesteps__box--title' id='ourhelp'>
 				<h2 className='global__title'>Komu pomagamy?</h2>
 				<img src={decoration} alt='dekoracja' />
 			</div>
@@ -17,45 +36,21 @@ const OurHelp = () => {
 				W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się
 				zajmują, komu pomagają i czego potrzebują.
 			</p>
-
-
-
-			<div className='ourhelp__container'>
-
-                {/* JEDNA KOMÓRKA */}
-				<div className='ourhelp__container--small'>
-					<div className='ourhelp__box--left'>
-						<p className='ourhelp__content--title'>Fundacja “Dbam o Zdrowie”</p>
-						<p className='ourhelp__content--description'>Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</p>
-					</div>
-					<div className='ourhelp__box-right'>
-						<p className='ourhelp__content--type'>ubrania, jedzenie, sprzęt AGD, meble, zabawki</p>
-					</div>
-				</div>
-
-                {/* JEDNA KOMÓRKA  */}
-				<div className='ourhelp__container--small'>
-					<div className='ourhelp__box--left'>
-						<p className='ourhelp__content--title'>Fundacja “Dla dzieci”</p>
-						<p className='ourhelp__content--description'>Cel i misja: Pomoc dzieciom z ubogich rodzin.</p>
-					</div>
-					<div className='ourhelp__box-right'>
-						<p className='ourhelp__content--type'>ubrania, meble, zabawki</p>
+			{orgs.map(({ id, type, name, description, details }) => (
+				<div className='ourhelp__container' key={id}>
+					<div className='ourhelp__container--small'>
+						<div className='ourhelp__box--left'>
+							<p className='ourhelp__content--title'>{name}</p>
+							<p className='ourhelp__content--description'>
+								{description}
+							</p>
+						</div>
+						<div className='ourhelp__box-right'>
+							<p className='ourhelp__content--type'>{details}</p>
+						</div>
 					</div>
 				</div>
-
-                {/* JEDNA KOMÓRKA  */}
-				<div className='ourhelp__container--small'>
-					<div className='ourhelp__box--left'>
-						<p className='ourhelp__content--title'>Fundacja “Bez domu”</p>
-						<p className='ourhelp__content--description'>Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.</p>
-					</div>
-					<div className='ourhelp__box-right'>
-						<p className='ourhelp__content--type'>ubrania, jedzenie, ciepłe koce</p>
-					</div>
-				</div>
-    
-			</div>
+			))}
 		</>
 	)
 }

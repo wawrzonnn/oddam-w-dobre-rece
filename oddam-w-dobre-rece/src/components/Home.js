@@ -3,6 +3,7 @@ import HomeHeader from './HomeHeader/HomeHeader';
 import HomeThreeColumns from './HomeThreeColumns/HomeThreeColumns';
 import HomeSteps from './HomeSteps/HomeSteps';
 import HomeAbout from './HomeAbout/HomeAbout';
+import Test from './Test';
 
 
 
@@ -11,6 +12,7 @@ const Home = () => {
 		<>
 		<HomeHeader />
 		<HomeThreeColumns />
+		<Test />
 		<HomeSteps />
 		<HomeAbout />
 		</>
