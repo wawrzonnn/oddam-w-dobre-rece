@@ -19,6 +19,7 @@
 	padding: 0.5rem;
 	border: 0.75px solid transparent;
 	cursor: pointer;
+	background-color: white;
 	&:hover {
 		border: 0.75px solid #fad648;
 	}
@@ -74,4 +75,8 @@
     margin: 1rem;
 	cursor: pointer;
 	background-color: white;
+}
+
+.header__box--main {
+	justify-content: flex-start;
 }

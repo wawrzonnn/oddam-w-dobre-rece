@@ -32,6 +32,9 @@ const Contact = () => {
 			},
 			body,
 		})
+		console.log(res);
+		const resul = await res.json()
+		console.log(resul);
 	}
 
 	return (
