@@ -5,6 +5,7 @@ import Contact from './components/Contact/Contact'
 import { HashRouter, Routes, Route, BrowserRouter } from 'react-router-dom'
 import Login from './components/Login/Login'
 import Header from './components/Header/Header'
+import Register from './components/Register/Register'
 
 function App() {
 	return (
@@ -14,7 +15,7 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='/logowanie' element={<Login />} />
-					<Route path='/rejestracja' element={<Login />} />
+					<Route path='/rejestracja' element={<Register />} />
 				</Routes>
 			</BrowserRouter>
 		</>
