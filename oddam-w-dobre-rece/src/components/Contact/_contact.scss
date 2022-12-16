@@ -49,6 +49,7 @@
 .contact__inputs--textarea {
 	width: 33rem;
 	height: 8em;
+	
 }
 
 .contact__button {
@@ -58,6 +59,7 @@
 	font-weight: 100;
 	color: #3c3c3c;
 	margin-top: 1rem;
+	margin-left: 0.8rem;
 	display: flex;
 	align-self: flex-end;
 }
@@ -80,4 +82,19 @@ margin-right: 2.5rem;
 
 .contact__footer--fb, .contact__footer--ig {
   margin: 0 0.5rem;
+}
+
+.contact__validate--error {
+	color: tomato;
+	margin-top: 0.5rem;
+	font-size: 0.9rem;
+	font-weight: 500;	
+}
+
+.contact__validate--error-border {
+	border-bottom: 1px solid tomato;
+}
+
+.contact__textarea--box {
+	margin-left: 0.9rem;
 }

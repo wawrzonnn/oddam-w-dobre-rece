@@ -16,15 +16,15 @@ const HomeHeader = () => {
 					</h1>
 					<img src={Decoration} alt='dekoracja' />
 					<div className='header__buttons--box'>
-						{/* <Link to='/logowanie'> */}
+						<Link to='/logowanie'>
 						<button className='header__buttons--item'>
 							ODDAJ
 							<br /> RZECZY
 						</button>
-						{/* </Link> */}
-						{/* <Link to='/logowanie'> */}
-						<button className='header__buttons--item'>ZORGANIZUJ ZBIÓRKĘ</button>
-						{/* </Link> */}
+						</Link>
+						<Link to='/logowanie'>
+						<button className='header__buttons--item'>ZORGANIZUJ<br/> ZBIÓRKĘ</button>
+						</Link>
 					</div>
 				</div>
 			</div>

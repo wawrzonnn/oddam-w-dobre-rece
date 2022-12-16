@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Decoration from '../../assets/Decoration.svg'
+import { Link } from 'react-router-dom'
 
 export default function Register() {
 	return (
@@ -16,7 +17,9 @@ export default function Register() {
 					<input className='contact__inputs--item'></input>
 				</div>
 				<div className='login__action--box'>
-					<button className='header__login--buttons login__button--action'>Zaloguj się</button>
+					<Link to='/logowanie'>
+						<button className='header__login--buttons login__button--action'>Zaloguj się</button>
+					</Link>
 					<button className='header__login--buttons login__button--action'>Załóż konto</button>
 				</div>
 			</div>

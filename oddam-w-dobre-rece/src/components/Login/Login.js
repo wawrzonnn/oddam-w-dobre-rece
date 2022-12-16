@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Decoration from '../../assets/Decoration.svg'
-
+import { Link } from 'react-router-dom'
 export default function Login() {
 	return (
 		<>
@@ -14,7 +14,8 @@ export default function Login() {
 					<input className='contact__inputs--item'></input>
 				</div>
 				<div className='login__action--box'>
-					<button className='header__login--buttons login__button--action'>Załóż konto</button>
+				<Link to='/rejestracja'>
+					<button className='header__login--buttons login__button--action'>Załóż konto</button></Link>
 					<button className='header__login--buttons login__button--action'>Zaloguj się</button>
 				</div>
 			</div>

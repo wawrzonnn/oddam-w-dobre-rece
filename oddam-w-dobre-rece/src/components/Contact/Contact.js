@@ -12,6 +12,10 @@ const Contact = () => {
 		message: '',
 	})
 
+	const [name, setName] = useState(false)
+	const [email, setEmail] = useState(false)
+	const [text, setText] = useState(false)
+
 	const handleChange = e =>
 		setForm(prev => ({
 			...prev,
@@ -20,11 +24,27 @@ const Contact = () => {
 
 	const submitHandler = async e => {
 		e.preventDefault()
+
+		if (!form.name || form.name.length < 1 || form.name.includes(' ')) {
+			setName(true)
+		} else {
+			setName(false)
+		}
+		if (!form.email || form.email.length < 4 || !form.email.includes('@')) {
+			setEmail(true)
+		} else {
+			setEmail(false)
+		}
+		if (!form.text || form.text.length < 120 ) {
+			setText(true)
+		} else {
+			setText(false)
+		}
 		const body = JSON.stringify({
 			form,
 		})
 
-		const res = await fetch('https://my-json-server.typicode.com/typicode/demo/posts', {
+		const res = await fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
@@ -32,9 +52,9 @@ const Contact = () => {
 			},
 			body,
 		})
-		console.log(res);
+		console.log(res)
 		const resul = await res.json()
-		console.log(resul);
+		console.log(resul)
 	}
 
 	return (
@@ -53,30 +73,33 @@ const Contact = () => {
 								<p className='contact__placeholder'>Wpisz swoje imię</p>
 								<input
 									id='name'
-									className='contact__inputs--item'
+									className={`contact__inputs--item ${text === false ? true : ('contact__validate--error-border')}`}
 									type={'text'}
 									value={form.name}
 									onChange={handleChange}></input>
+									{name === false ? true : ( <p className='contact__validate--error'>Podanę imię jest nieprawidłowe</p>)}
 							</div>
 							<div className='contact__email--box'>
 								<p className='contact__placeholder'>Wpisz swłój email</p>
 								<input
 									id='email'
-									className='contact__inputs--item'
+									className={`contact__inputs--item ${text === false ? true : ('contact__validate--error-border')}`}
 									type={'email'}
 									value={form.email}
 									onChange={handleChange}></input>
+									{email === false ? true : ( <p className='contact__validate--error'>Podany e-mail jest nieprawidłowy</p>)}
 							</div>
 						</div>
-						<div>
+						<div className='contact__textarea--box'>
 							<p className='contact__placeholder'>Wpisz swoją wiadomość</p>
 							<textarea
-								id='message'
-								className='contact__inputs--item contact__inputs--textarea'
+								id='text'
+								className={`contact__inputs--item contact__inputs--textarea ${text === false ? true : ('contact__validate--error-border')}`}
 								type={'textarea'}
-								value={form.message}
+								value={form.text}
 								onChange={handleChange}
 							/>
+							{text === false ? true : ( <p className='contact__validate--error'>Wiadomość musi zawierać conajmniej 120 znaków</p>)}
 						</div>
 						<button className='contact__button' type='submit'>
 							Wyślij
@@ -84,7 +107,6 @@ const Contact = () => {
 					</form>
 				</div>
 			</div>
-			<input type={'text'}></input>
 
 			<p className='contact__footer--txt'>Copyright by Coders Lab</p>
 			<div className='contact__footer--box'>

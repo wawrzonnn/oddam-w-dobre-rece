@@ -4,6 +4,7 @@ import icon1 from '../../assets/Icon-1.svg'
 import icon2 from '../../assets/Icon-2.svg'
 import icon3 from '../../assets/Icon-3.svg'
 import icon4 from '../../assets/Icon-4.svg'
+import { Link } from 'react-router-dom'
 
 const HomeSteps = () => {
 	return (
@@ -47,11 +48,11 @@ const HomeSteps = () => {
 						<br /> w dogodnym terminie
 					</p>
 				</div>
-			</div>
-            <div className='header__buttons--item homesteps__button'>
-							ODDAJ
-							<br /> RZECZY
-						</div>
+			</div><Link to='/logowanie' style={{ textDecoration:'none' }}>
+			<div className='header__buttons--item homesteps__button'>
+				ODDAJ
+				<br /> RZECZY
+			</div></Link>
 		</>
 	)
 }
